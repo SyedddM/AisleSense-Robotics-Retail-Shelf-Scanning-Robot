@@ -51,7 +51,7 @@ https://github.com/user-attachments/assets/cb44c516-4edf-4788-b195-7c06d652e833
 ┌─────────────────────────────────────────────────────────┐
 │              AISLESENSE ROBOT  (Raspberry Pi 5)         │
 │                                                         │
-│   RPLidar A1M8 ──► rplidar_node ──► scan_stabilizer    │
+│   RPLidar A1M8 ──► rplidar_node ──► scan_stabilizer     │
 │                                      (720-beam resample)│
 │                                            │            │
 │   Arduino ──► aislesense_core              │            │
@@ -59,7 +59,7 @@ https://github.com/user-attachments/assets/cb44c516-4edf-4788-b195-7c06d652e833
 │    └─ MPU6050 IMU                          │            │
 │         │                                  │            │
 │         ▼                                  ▼            │
-│   odometry_node ──►┌──────────┐◄── /scan_stable        │
+│   odometry_node ──►┌──────────┐◄── /scan_stable         │
 │    (/odom @ 50Hz)  │   EKF    │                         │
 │                    │  Sensor  │                         │
 │   /imu/data_raw ──►│  Fusion  │                         │
@@ -72,7 +72,7 @@ https://github.com/user-attachments/assets/cb44c516-4edf-4788-b195-7c06d652e833
 │              │   Nav2 + AMCL       │  ◄── Nav mode      │
 │              └────────┬────────────┘                    │
 │                       │                                 │
-│    L298N H-bridge ◄── cmd_vel ◄── DWB Local Planner    │
+│    L298N H-bridge ◄── cmd_vel ◄── DWB Local Planner     │
 │    (PWM motor ctrl)                                     │
 └─────────────────────────────────────────────────────────┘
                         │
@@ -83,31 +83,31 @@ https://github.com/user-attachments/assets/cb44c516-4edf-4788-b195-7c06d652e833
 │           AISLESENSE NAVIGATOR  (Desktop App)           │
 │                                                         │
 │   • Loads occupancy grid map (PGM + YAML)               │
-│   • Interactive region drawing (polygon tool)            │
-│   • Approach pose placement per region                   │
-│   • Dock pose (robot home position)                      │
-│   • Scan tour: ordered multi-region autonomous patrol    │
-│   • Sends NavigateToPose goals via ROS 2 action client   │
+│   • Interactive region drawing (polygon tool)           │
+│   • Approach pose placement per region                  │
+│   • Dock pose (robot home position)                     │
+│   • Scan tour: ordered multi-region autonomous patrol   │
+│   • Sends NavigateToPose goals via ROS 2 action client  │
 └─────────────────────────────────────────────────────────┘
                         │
                   Shelf images
                         │
 ┌───────────────────────▼─────────────────────────────────┐
-│              ASVISION  (Offline Analytics)               │
+│              ASVISION  (Offline Analytics)              │
 │                                                         │
-│   Stage 1 ─ Shelf Segmentation    (YOLO11x-seg)        │
-│   Stage 2 ─ Product Detection     (YOLO11x)            │
-│   Stage 3 ─ Depth Estimation      (Depth Anything V2)  │
+│   Stage 1 ─ Shelf Segmentation    (YOLO11x-seg)         │
+│   Stage 2 ─ Product Detection     (YOLO11x)             │
+│   Stage 3 ─ Depth Estimation      (Depth Anything V2)   │
 │   Stage 4 ─ Text Verification     (OCR — planned)       │
 │                                                         │
-│   Analytics Engine                                       │
-│   ├── Gap detection (geometry + depth severity grading)  │
-│   ├── Restock volume estimation                          │
-│   ├── Share of shelf % (SOS)                             │
-│   └── Per-shelf item density                             │
+│   Analytics Engine                                      │
+│   ├── Gap detection (geometry + depth severity grading) │
+│   ├── Restock volume estimation                         │
+│   ├── Share of shelf % (SOS)                            │
+│   └── Per-shelf item density                            │
 │                                                         │
-│   Output ─ Streamlit dashboard with KPI cards,           │
-│            annotated visualisations, action reports       │
+│   Output ─ Streamlit dashboard with KPI cards,          │
+│            annotated visualisations, action reports     │
 └─────────────────────────────────────────────────────────┘
 ```
 
